@@ -1,9 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
+import Jobs from "./pages/Jobs";
+import jobsLoader from "./loaders/jobsLoader";
 
 const routes = [
   {
     path: '/',
-    element: <h1>Hello, World!</h1>
+    element: <Jobs />,
+    loader: jobsLoader,
+    hydrateFallbackElement: <div>Loading jobs...</div>,
   }
 ];
 
