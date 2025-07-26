@@ -1,13 +1,25 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Jobs from "./pages/Jobs";
 import jobsLoader from "./loaders/jobsLoader";
+import JobDetails from "./pages/JobDetails";
+import JobsBoard from "./wrappers/JobsBoard";
 
 const routes = [
   {
     path: '/',
-    element: <Jobs />,
-    loader: jobsLoader,
-    hydrateFallbackElement: <div>Loading jobs...</div>,
+    element: <JobsBoard />,
+    children: [
+      {
+        path: '',
+        element: <Jobs />,
+        loader: jobsLoader,
+        hydrateFallbackElement: <div>Loading jobs...</div>,
+      },
+      {
+        path: '/jobs/:jobId',
+        element: <JobDetails />
+      }
+    ]
   }
 ];
 
