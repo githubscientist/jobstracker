@@ -9,7 +9,8 @@ const JobsBoard = () => {
             <p
                 className="text-muted text-center text-sm"
             >You can track your jobs here.</p>
-
+            <br />
+            <hr />
             <Outlet />
         </div>
     )

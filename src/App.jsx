@@ -3,6 +3,7 @@ import Jobs from "./pages/Jobs";
 import jobsLoader from "./loaders/jobsLoader";
 import JobDetails from "./pages/JobDetails";
 import JobsBoard from "./wrappers/JobsBoard";
+import jobLoader from "./loaders/jobLoader";
 
 const routes = [
   {
@@ -17,7 +18,9 @@ const routes = [
       },
       {
         path: '/jobs/:jobId',
-        element: <JobDetails />
+        element: <JobDetails />,
+        loader: jobLoader,
+        hydrateFallbackElement: <div>Loading job details...</div>,
       }
     ]
   }

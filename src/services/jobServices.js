@@ -8,6 +8,14 @@ const jobServices = {
         } catch (error) {
             return { message: 'Failed to fetch jobs', error: error.message };
         }
+    },
+    getJobById: async (id) => {
+        try {
+            const response = await instance.get(`/${id}`);
+            return response.data;
+        } catch (error) {
+            return { message: 'Failed to fetch job details', error: error.message };
+        }
     }
 }
 
