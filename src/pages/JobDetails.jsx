@@ -26,6 +26,11 @@ const JobDetails = () => {
 
                 onClick={() => navigate(-1)}
             >Back</button>
+
+            <button
+                className="mt-4 ml-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+                onClick={() => navigate(`/update/${job.id}`)}
+            >Update</button>
         </div>
     )
 }

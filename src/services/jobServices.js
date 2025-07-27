@@ -16,6 +16,14 @@ const jobServices = {
         } catch (error) {
             return { message: 'Failed to fetch job details', error: error.message };
         }
+    },
+    updateJobById: async (id, job) => {
+        try {
+            const response = await instance.put(`/${id}`, job);
+            return response.data;
+        } catch (error) {
+            return { message: 'Failed to update job details', error: error.message };
+        }
     }
 }
 
