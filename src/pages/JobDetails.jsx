@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 
 const JobDetails = () => {
 
     const job = useLoaderData();
+    const navigate = useNavigate();
 
     return (
         <div className="text-center mt-4 mx-0 p-4">
@@ -20,6 +21,11 @@ const JobDetails = () => {
                 <p className="mb-2"><strong>Notes:</strong> {job.notes}</p>
                 <p className="mb-2"><strong>Applied on:</strong> {new Date(job.dateApplied).toLocaleDateString()}</p>
             </div>
+            <button
+                className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+
+                onClick={() => navigate(-1)}
+            >Back</button>
         </div>
     )
 }
